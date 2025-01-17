@@ -27,4 +27,4 @@ Stay tuned for updates as new content becomes available!
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/<username>/CSE332-Computer-Organization-and-Architecture-SFM.git
+   git clone https://github.com/hossaintaufiq/CSE332-Computer-Organization-and-Architecture-SFM.git
