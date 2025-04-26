@@ -84,14 +84,10 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(580,280)" to="(580,330)"/>
     <wire from="(370,330)" to="(580,330)"/>
     <wire from="(400,240)" to="(550,240)"/>
-    <comp lib="0" loc="(370,440)" name="Pin">
+    <comp lib="0" loc="(390,110)" name="Pin">
+      <a name="width" val="2"/>
       <a name="tristate" val="false"/>
-      <a name="label" val="Clock"/>
-    </comp>
-    <comp lib="4" loc="(690,240)" name="RAM">
-      <a name="addrWidth" val="2"/>
-      <a name="dataWidth" val="16"/>
-      <a name="bus" val="separate"/>
+      <a name="label" val="Address"/>
     </comp>
     <comp lib="0" loc="(810,240)" name="Pin">
       <a name="facing" val="west"/>
@@ -99,11 +95,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="width" val="16"/>
       <a name="tristate" val="false"/>
       <a name="label" val="Output "/>
-    </comp>
-    <comp lib="0" loc="(360,260)" name="Pin">
-      <a name="width" val="16"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Data"/>
     </comp>
     <comp lib="0" loc="(370,390)" name="Pin">
       <a name="tristate" val="false"/>
@@ -113,10 +104,19 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="tristate" val="false"/>
       <a name="label" val="Mem Write "/>
     </comp>
-    <comp lib="0" loc="(390,110)" name="Pin">
-      <a name="width" val="2"/>
+    <comp lib="0" loc="(370,440)" name="Pin">
       <a name="tristate" val="false"/>
-      <a name="label" val="Address"/>
+      <a name="label" val="Clock"/>
+    </comp>
+    <comp lib="4" loc="(690,240)" name="RAM">
+      <a name="addrWidth" val="2"/>
+      <a name="dataWidth" val="16"/>
+      <a name="bus" val="separate"/>
+    </comp>
+    <comp lib="0" loc="(360,260)" name="Pin">
+      <a name="width" val="16"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Data"/>
     </comp>
   </circuit>
   <circuit name="I-Type Data Path">
@@ -228,21 +228,9 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(710,500)" to="(720,500)"/>
     <wire from="(1150,370)" to="(1170,370)"/>
     <wire from="(760,680)" to="(900,680)"/>
-    <comp lib="6" loc="(95,596)" name="Text">
-      <a name="text" val="Clear"/>
-    </comp>
-    <comp lib="8" loc="(950,450)" name="16 Bit ALU"/>
-    <comp lib="0" loc="(150,550)" name="Pin">
+    <comp lib="0" loc="(1190,520)" name="Pin">
       <a name="tristate" val="false"/>
-    </comp>
-    <comp lib="6" loc="(725,884)" name="Text">
-      <a name="text" val="Hossain  Ahmmed Taufiq "/>
-      <a name="font" val="SansSerif bold 18"/>
-    </comp>
-    <comp lib="4" loc="(1340,450)" name="RAM">
-      <a name="addrWidth" val="2"/>
-      <a name="dataWidth" val="16"/>
-      <a name="bus" val="separate"/>
+      <a name="label" val="Mem Write "/>
     </comp>
     <comp lib="0" loc="(460,490)" name="Splitter">
       <a name="fanout" val="4"/>
@@ -263,30 +251,123 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="bit14" val="3"/>
       <a name="bit15" val="3"/>
     </comp>
+    <comp lib="0" loc="(1180,580)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="MemRead"/>
+    </comp>
+    <comp lib="6" loc="(729,106)" name="Text">
+      <a name="text" val="Hexa-2061"/>
+      <a name="font" val="SansSerif plain 18"/>
+    </comp>
+    <comp lib="6" loc="(558,78)" name="Text">
+      <a name="text" val="lw $t0, 1($zero)"/>
+    </comp>
+    <comp lib="8" loc="(950,450)" name="16 Bit ALU"/>
+    <comp lib="6" loc="(91,554)" name="Text">
+      <a name="text" val="Clock"/>
+    </comp>
+    <comp lib="0" loc="(1020,330)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="16"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(900,800)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="16"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="6" loc="(725,884)" name="Text">
+      <a name="text" val="Hossain  Ahmmed Taufiq "/>
+      <a name="font" val="SansSerif bold 18"/>
+    </comp>
+    <comp lib="6" loc="(550,121)" name="Text">
+      <a name="text" val="sw $t0, 0($Zero)"/>
+    </comp>
+    <comp lib="0" loc="(980,580)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="16"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="6" loc="(554,168)" name="Text">
+      <a name="text" val="OP|RS| RT|Im"/>
+      <a name="font" val="SansSerif bold 18"/>
+    </comp>
+    <comp lib="6" loc="(95,596)" name="Text">
+      <a name="text" val="Clear"/>
+    </comp>
+    <comp lib="4" loc="(230,490)" name="Register">
+      <a name="width" val="2"/>
+    </comp>
+    <comp lib="6" loc="(551,57)" name="Text">
+      <a name="text" val="OP|RS| RD|Im"/>
+      <a name="font" val="SansSerif bold 18"/>
+    </comp>
     <comp lib="0" loc="(760,680)" name="Bit Extender">
       <a name="in_width" val="4"/>
       <a name="out_width" val="2"/>
     </comp>
+    <comp lib="0" loc="(1090,450)" name="Bit Extender">
+      <a name="in_width" val="16"/>
+      <a name="out_width" val="2"/>
+    </comp>
+    <comp lib="0" loc="(720,810)" name="Bit Extender">
+      <a name="in_width" val="4"/>
+    </comp>
     <comp lib="0" loc="(200,320)" name="Constant">
       <a name="width" val="2"/>
     </comp>
-    <comp lib="3" loc="(310,310)" name="Adder">
-      <a name="width" val="2"/>
-    </comp>
-    <comp lib="6" loc="(552,140)" name="Text">
-      <a name="text" val="0010 0000 0110 0000"/>
-      <a name="font" val="SansSerif plain 18"/>
+    <comp lib="4" loc="(1340,450)" name="RAM">
+      <a name="addrWidth" val="2"/>
+      <a name="dataWidth" val="16"/>
+      <a name="bus" val="separate"/>
     </comp>
     <comp lib="6" loc="(553,101)" name="Text">
       <a name="text" val="0010 0000 0110 0001"/>
       <a name="font" val="SansSerif plain 18"/>
     </comp>
-    <comp lib="0" loc="(1180,580)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="MemRead"/>
+    <comp lib="4" loc="(420,490)" name="ROM">
+      <a name="addrWidth" val="2"/>
+      <a name="dataWidth" val="16"/>
+      <a name="contents">addr/data: 2 16
+2061 2063
+</a>
     </comp>
-    <comp lib="4" loc="(230,490)" name="Register">
+    <comp lib="0" loc="(890,330)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="16"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(150,550)" name="Pin">
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(1150,370)" name="Pin">
+      <a name="output" val="true"/>
       <a name="width" val="2"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Address"/>
+    </comp>
+    <comp lib="0" loc="(610,600)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Register Write "/>
+    </comp>
+    <comp lib="7" loc="(750,440)" name="16 bit register file"/>
+    <comp lib="6" loc="(552,140)" name="Text">
+      <a name="text" val="0010 0000 0110 0000"/>
+      <a name="font" val="SansSerif plain 18"/>
+    </comp>
+    <comp lib="3" loc="(310,310)" name="Adder">
+      <a name="width" val="2"/>
+    </comp>
+    <comp lib="6" loc="(728,140)" name="Text">
+      <a name="text" val="Hexa-2060"/>
+      <a name="font" val="SansSerif plain 18"/>
+    </comp>
+    <comp lib="0" loc="(150,590)" name="Pin">
+      <a name="tristate" val="false"/>
     </comp>
     <comp lib="0" loc="(470,250)" name="Pin">
       <a name="facing" val="west"/>
@@ -295,83 +376,12 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="label" val="Data"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="4" loc="(420,490)" name="ROM">
-      <a name="addrWidth" val="2"/>
-      <a name="dataWidth" val="16"/>
-      <a name="contents">addr/data: 2 16
-2061 2060
-</a>
-    </comp>
-    <comp lib="7" loc="(750,440)" name="16 bit register file"/>
-    <comp lib="6" loc="(551,57)" name="Text">
-      <a name="text" val="OP|RS| RD|Im"/>
-      <a name="font" val="SansSerif bold 18"/>
-    </comp>
-    <comp lib="0" loc="(980,580)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="16"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(900,800)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="16"/>
-      <a name="tristate" val="false"/>
-    </comp>
-    <comp lib="0" loc="(610,600)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="Register Write "/>
-    </comp>
-    <comp lib="6" loc="(729,106)" name="Text">
-      <a name="text" val="Hexa-2061"/>
-      <a name="font" val="SansSerif plain 18"/>
-    </comp>
-    <comp lib="0" loc="(720,810)" name="Bit Extender">
-      <a name="in_width" val="4"/>
-    </comp>
-    <comp lib="0" loc="(1090,450)" name="Bit Extender">
-      <a name="in_width" val="16"/>
-      <a name="out_width" val="2"/>
-    </comp>
-    <comp lib="6" loc="(91,554)" name="Text">
-      <a name="text" val="Clock"/>
-    </comp>
-    <comp lib="0" loc="(1190,520)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="Mem Write "/>
-    </comp>
-    <comp lib="0" loc="(1150,370)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="width" val="2"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Address"/>
-    </comp>
     <comp lib="0" loc="(1400,420)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="width" val="16"/>
       <a name="tristate" val="false"/>
       <a name="label" val="Output "/>
-    </comp>
-    <comp lib="0" loc="(890,330)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="16"/>
-      <a name="tristate" val="false"/>
-    </comp>
-    <comp lib="0" loc="(150,590)" name="Pin">
-      <a name="tristate" val="false"/>
-    </comp>
-    <comp lib="0" loc="(1020,330)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="16"/>
-      <a name="tristate" val="false"/>
-    </comp>
-    <comp lib="6" loc="(728,140)" name="Text">
-      <a name="text" val="Hexa-2060"/>
-      <a name="font" val="SansSerif plain 18"/>
     </comp>
   </circuit>
 </project>
